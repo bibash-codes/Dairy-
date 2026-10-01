@@ -1,0 +1,1116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gautam Dairy | Fresh & Pure Village Dairy Products</title>
+  
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    /* CSS STYLES */
+    :root {
+      --primary: #15803d;
+      --primary-hover: #166534;
+      --accent: #eab308;
+      --bg-light: #fefce8;
+      --bg-white: #ffffff;
+      --text-dark: #0f172a;
+      --text-muted: #64748b;
+      --border-color: #e2e8f0;
+      --shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05);
+      --radius: 12px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+
+    body {
+      background-color: #f8fafc;
+      color: var(--text-dark);
+      line-height: 1.6;
+    }
+
+    h1, h2, h3, h4 {
+      font-family: 'Outfit', sans-serif;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* Header */
+    header {
+      position: sticky;
+      top: 0;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(8px);
+      z-index: 100;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .nav-container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 80px;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      font-weight: 800;
+      font-size: 24px;
+      color: var(--primary);
+    }
+
+    .logo-icon {
+      width: 44px;
+      height: 44px;
+      background: var(--primary);
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+    }
+
+    .logo-text span {
+      color: var(--accent);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 28px;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: var(--text-dark);
+      font-weight: 600;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover, .nav-links a.active {
+      color: var(--primary);
+    }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 20px;
+      border-radius: 30px;
+      font-weight: 600;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .btn-primary {
+      background: var(--primary);
+      color: white;
+    }
+
+    .btn-primary:hover {
+      background: var(--primary-hover);
+    }
+
+    .btn-secondary {
+      background: #f1f5f9;
+      color: var(--text-dark);
+    }
+
+    .btn-phone {
+      background: #dcfce7;
+      color: var(--primary);
+    }
+
+    .btn-phone:hover {
+      background: #bbf7d0;
+    }
+
+    .cart-btn {
+      position: relative;
+      background: #f1f5f9;
+      border: none;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      cursor: pointer;
+      font-size: 18px;
+      color: var(--text-dark);
+    }
+
+    .cart-count {
+      position: absolute;
+      top: -4px;
+      right: -4px;
+      background: #ef4444;
+      color: white;
+      font-size: 11px;
+      font-weight: 700;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .mobile-toggle {
+      display: none;
+      background: none;
+      border: none;
+      font-size: 24px;
+      cursor: pointer;
+    }
+
+    /* Hero Section */
+    .hero {
+      padding: 60px 0;
+      background: linear-gradient(135deg, var(--bg-light) 0%, #ffffff 100%);
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 40px;
+      align-items: center;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: #fef08a;
+      color: #854d0e;
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-size: 14px;
+      font-weight: 600;
+      margin-bottom: 20px;
+    }
+
+    .hero h1 {
+      font-size: 48px;
+      line-height: 1.2;
+      margin-bottom: 20px;
+    }
+
+    .hero h1 span {
+      color: var(--primary);
+    }
+
+    .hero p {
+      font-size: 18px;
+      color: var(--text-muted);
+      margin-bottom: 30px;
+    }
+
+    .hero-btns {
+      display: flex;
+      gap: 15px;
+      margin-bottom: 30px;
+    }
+
+    .quick-contacts {
+      background: white;
+      padding: 16px;
+      border-radius: var(--radius);
+      border: 1px solid var(--border-color);
+    }
+
+    .contact-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 8px;
+    }
+
+    .chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 12px;
+      background: #f1f5f9;
+      border-radius: 15px;
+      text-decoration: none;
+      color: var(--primary);
+      font-size: 13px;
+      font-weight: 600;
+    }
+
+    .hero-card {
+      position: relative;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+    }
+
+    .hero-card img {
+      width: 100%;
+      height: 400px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .hero-tag {
+      position: absolute;
+      bottom: 20px;
+      left: 20px;
+      background: rgba(255, 255, 255, 0.9);
+      padding: 8px 16px;
+      border-radius: 20px;
+      font-weight: 600;
+      font-size: 14px;
+    }
+
+    /* Sections */
+    .origin-section, .products-section, .reviews-section {
+      padding: 80px 0;
+    }
+
+    .section-title {
+      text-align: center;
+      max-width: 600px;
+      margin: 0 auto 50px auto;
+    }
+
+    .section-title span {
+      color: var(--primary);
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-size: 13px;
+    }
+
+    .section-title h2 {
+      font-size: 36px;
+      margin-top: 5px;
+    }
+
+    /* Origin & Founders */
+    .origin-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      margin-bottom: 50px;
+    }
+
+    .origin-text p {
+      margin-bottom: 15px;
+      color: var(--text-muted);
+    }
+
+    .location-badge {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      background: #f0fdf4;
+      border: 1px solid #bbf7d0;
+      padding: 16px;
+      border-radius: var(--radius);
+      margin-top: 20px;
+    }
+
+    .location-badge i {
+      font-size: 24px;
+      color: var(--primary);
+    }
+
+    .founders-card {
+      background: white;
+      padding: 30px;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      border: 1px solid var(--border-color);
+    }
+
+    .founders-card h4 {
+      font-size: 20px;
+      margin-bottom: 20px;
+    }
+
+    .founder-list {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .founder-item {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .founder-item .avatar {
+      width: 50px;
+      height: 50px;
+      background: #e0e7ff;
+      color: #3730a3;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+    }
+
+    .founder-item span {
+      display: block;
+      font-size: 13px;
+      color: var(--text-muted);
+    }
+
+    .founder-item a {
+      color: var(--primary);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 14px;
+    }
+
+    /* Team Grid */
+    .team-heading {
+      text-align: center;
+      font-size: 24px;
+      margin-bottom: 30px;
+    }
+
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 25px;
+    }
+
+    .team-card {
+      background: white;
+      padding: 25px;
+      border-radius: var(--radius);
+      text-align: center;
+      border: 1px solid var(--border-color);
+      box-shadow: var(--shadow);
+    }
+
+    .team-card .icon-wrap {
+      width: 60px;
+      height: 60px;
+      background: #f0fdf4;
+      color: var(--primary);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+      margin: 0 auto 15px auto;
+    }
+
+    .team-card .role {
+      color: var(--primary);
+      font-weight: 600;
+      font-size: 14px;
+    }
+
+    .team-card .desc {
+      font-size: 13px;
+      color: var(--text-muted);
+      margin-top: 8px;
+    }
+
+    /* Products */
+    .filter-tabs {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin-bottom: 40px;
+      flex-wrap: wrap;
+    }
+
+    .filter-btn {
+      padding: 8px 20px;
+      border-radius: 20px;
+      border: 1px solid var(--border-color);
+      background: white;
+      cursor: pointer;
+      font-weight: 600;
+      transition: all 0.2s;
+    }
+
+    .filter-btn.active, .filter-btn:hover {
+      background: var(--primary);
+      color: white;
+      border-color: var(--primary);
+    }
+
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 30px;
+    }
+
+    .product-card {
+      background: white;
+      border-radius: var(--radius);
+      overflow: hidden;
+      border: 1px solid var(--border-color);
+      box-shadow: var(--shadow);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .product-card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+
+    .product-info {
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+    }
+
+    .product-title {
+      font-size: 18px;
+      margin-bottom: 6px;
+    }
+
+    .product-desc {
+      font-size: 13px;
+      color: var(--text-muted);
+      margin-bottom: 15px;
+      flex-grow: 1;
+    }
+
+    .product-bottom {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .product-price {
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--primary);
+    }
+
+    /* Reviews */
+    .reviews-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 25px;
+    }
+
+    .review-card {
+      background: white;
+      padding: 25px;
+      border-radius: var(--radius);
+      border: 1px solid var(--border-color);
+    }
+
+    .stars {
+      color: #f59e0b;
+      margin-bottom: 12px;
+    }
+
+    .reviewer {
+      margin-top: 15px;
+      display: flex;
+      flex-direction: column;
+      font-size: 13px;
+    }
+
+    /* Footer */
+    footer {
+      background: #0f172a;
+      color: white;
+      padding: 60px 0 20px 0;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr;
+      gap: 40px;
+      margin-bottom: 40px;
+    }
+
+    .footer-col p {
+      color: #94a3b8;
+      margin-top: 10px;
+    }
+
+    .footer-col h4 {
+      margin-bottom: 15px;
+    }
+
+    .contact-list {
+      list-style: none;
+    }
+
+    .contact-list li {
+      display: flex;
+      gap: 12px;
+      margin-bottom: 12px;
+      color: #94a3b8;
+    }
+
+    .contact-list a {
+      color: #38bdf8;
+      text-decoration: none;
+    }
+
+    .copyright {
+      text-align: center;
+      padding-top: 20px;
+      border-top: 1px solid #1e293b;
+      color: #64748b;
+      font-size: 14px;
+    }
+
+    /* Cart Drawer */
+    .cart-overlay {
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0,0,0,0.5);
+      display: none;
+      z-index: 200;
+    }
+
+    .cart-drawer {
+      position: fixed;
+      top: 0; right: -400px;
+      width: 380px;
+      height: 100%;
+      background: white;
+      z-index: 201;
+      transition: right 0.3s ease;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .cart-drawer.open {
+      right: 0;
+    }
+
+    .cart-header {
+      padding: 20px;
+      border-bottom: 1px solid var(--border-color);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .close-cart {
+      background: none;
+      border: none;
+      font-size: 24px;
+      cursor: pointer;
+    }
+
+    .cart-body {
+      padding: 20px;
+      flex-grow: 1;
+      overflow-y: auto;
+    }
+
+    .cart-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 15px;
+      padding-bottom: 15px;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .cart-footer {
+      padding: 20px;
+      border-top: 1px solid var(--border-color);
+    }
+
+    .cart-total {
+      display: flex;
+      justify-content: space-between;
+      font-size: 18px;
+      margin-bottom: 15px;
+    }
+
+    .btn-block {
+      width: 100%;
+      justify-content: center;
+    }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      .hero-grid, .origin-grid, .team-grid, .reviews-grid, .footer-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .nav-links {
+        display: none;
+      }
+      
+      .mobile-toggle {
+        display: block;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <header>
+    <div class="container nav-container">
+      <a href="#home" class="logo">
+        <div class="logo-icon"><i class="fa-solid fa-cow"></i></div>
+        <div class="logo-text">Gautam <span>Dairy</span></div>
+      </a>
+      
+      <nav class="nav-links" id="navLinks">
+        <a href="#home" class="active">Home</a>
+        <a href="#origin">Origin & About Us</a>
+        <a href="#products">Products</a>
+        <a href="#reviews">Reviews</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <div class="nav-actions">
+        <button class="cart-btn" id="openCartBtn" aria-label="Shopping Cart">
+          <i class="fa-solid fa-bag-shopping"></i>
+          <span class="cart-count" id="cartCount">0</span>
+        </button>
+        <a href="tel:+9779845678789" class="btn btn-phone"><i class="fa-solid fa-phone"></i> Call Us</a>
+        <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle menu">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section id="home" class="hero">
+    <div class="container hero-grid">
+      <div class="hero-content">
+        <div class="badge"><i class="fa-solid fa-leaf"></i> 100% Pure Organic Village Milk</div>
+        <h1>Freshness From the Hills of <span>Okhaldhunga</span></h1>
+        <p>Experience authentic, unadulterated dairy products crafted with love and modern hygiene standards in Harkapur, Manebhanjyang 7.</p>
+        
+        <div class="hero-btns">
+          <a href="#products" class="btn btn-primary"><i class="fa-solid fa-utensils"></i> Explore Products</a>
+          <a href="tel:+9779845678789" class="btn btn-secondary"><i class="fa-solid fa-phone"></i> Order via Phone</a>
+        </div>
+
+        <div class="quick-contacts">
+          <p><strong>Quick Call Co-Founders:</strong></p>
+          <div class="contact-chips">
+            <a href="tel:+9779845678789" class="chip"><i class="fa-solid fa-phone"></i> Bishnu Prasad Gautam (+977 9845678789)</a>
+            <a href="tel:+977456789876" class="chip"><i class="fa-solid fa-phone"></i> Menuka Dhamala (+977 456789876)</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-image-wrap">
+        <div class="hero-card">
+          <img src="https://images.unsplash.com/photo-1527153857715-3908f2bae5e8?auto=format&fit=crop&q=80&w=800" alt="Fresh Gautam Dairy Cow">
+          <div class="hero-tag">
+            <i class="fa-solid fa-location-dot"></i> Harkapur, Manebhanjyang 7
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Origin & About Us Section -->
+  <section id="origin" class="origin-section">
+    <div class="container">
+      <div class="section-title">
+        <span>Our Roots</span>
+        <h2>Origin & About Gautam Dairy</h2>
+        <p>Rooted in village tradition, empowered by technical expertise.</p>
+      </div>
+
+      <div class="origin-grid">
+        <div class="origin-text">
+          <h3>Pure Village Heart, Technical Mindset</h3>
+          <p>Nestled in the tranquil village of <strong>Harkapur, Manebhanjyang 7, Okhaldhunga</strong>, Gautam Dairy was established with a clear mission: to bring fresh, natural, chemical-free dairy products directly from local village farms to your dining table.</p>
+          <p>Our cattle graze freely in lush mountain pastures, giving our milk and curd a uniquely natural taste, rich texture, and wholesome nourishment that factory-processed brands simply cannot replicate.</p>
+          
+          <div class="location-badge">
+            <i class="fa-solid fa-map-location-dot"></i>
+            <div>
+              <strong>Dairy Location:</strong>
+              <p>Harkapur, Manebhanjyang 7, Okhaldhunga, Nepal</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="founders-card">
+          <h4>Co-Founders</h4>
+          <div class="founder-list">
+            <div class="founder-item">
+              <div class="avatar"><i class="fa-solid fa-user-tie"></i></div>
+              <div>
+                <strong>Bishnu Prasad Gautam</strong>
+                <span>Co-Founder</span>
+                <a href="tel:+9779845678789"><i class="fa-solid fa-phone"></i> +977 9845678789</a>
+              </div>
+            </div>
+            <div class="founder-item">
+              <div class="avatar"><i class="fa-solid fa-user-tie"></i></div>
+              <div>
+                <strong>Menuka Dhamala</strong>
+                <span>Co-Founder</span>
+                <a href="tel:+977456789876"><i class="fa-solid fa-phone"></i> +977 456789876</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Support Team -->
+      <div class="team-section">
+        <h3 class="team-heading">Supported & Guided By</h3>
+        <div class="team-grid">
+          <div class="team-card"> `<img src="bishal.jpg" alt="Photo" width="80">`
+            <div class="icon-wrap"></div>
+            <h4>Bishal Gautam</h4>
+            <p class="role">Civil Engineer</p>
+            <p class="desc">Ensuring eco-friendly, sustainable, and modern farm infrastructure design.</p>
+          </div>
+          <div class="team-card">
+            <div class="icon-wrap"><i class="fa-solid fa-laptop-code"></i></div>
+            <h4>Bibash Gautam</h4>
+            <p class="role">IT Engineer</p>
+            <p class="desc">Managing digital ordering, supply chain technology, and tech operations.</p>
+          </div>
+          <div class="team-card">
+            <div class="icon-wrap"><i class="fa-solid fa-chart-line"></i></div>
+            <h4>Bipana Gautam</h4>
+            <p class="role">Finance Head</p>
+            <p class="desc">Overseeing financial planning, fair farmer pricing, and sustainable growth.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Products Section -->
+  <section id="products" class="products-section">
+    <div class="container">
+      <div class="section-title">
+        <span>Fresh Selection</span>
+        <h2>Our Village Dairy Products</h2>
+        <p>100% natural, hygienic, and delivered fresh every day.</p>
+      </div>
+
+      <!-- Category Filter -->
+      <div class="filter-tabs">
+        <button class="filter-btn active" data-category="all">All Items</button>
+        <button class="filter-btn" data-category="milk">Milk</button>
+        <button class="filter-btn" data-category="curd">Curd / Dahi</button>
+        <button class="filter-btn" data-category="ghee">Pure Ghee</button>
+        <button class="filter-btn" data-category="paneer">Paneer & Butter</button>
+      </div>
+
+      <!-- Products Grid -->
+      <div class="products-grid" id="productsGrid">
+        <!-- Injected dynamically via JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Reviews Section -->
+  <section id="reviews" class="reviews-section">
+    <div class="container">
+      <div class="section-title">
+        <span>Customer Feedback</span>
+        <h2>What People Say About Us</h2>
+        <p>Hear from families who love our fresh Okhaldhunga milk and dairy products.</p>
+      </div>
+
+      <div class="reviews-grid">
+        <div class="review-card">
+          <div class="stars">★★★★★</div>
+          <p>"The curd (Dahi) from Gautam Dairy has that rich traditional taste that you only find in villages. Highly recommended!"</p>
+          <div class="reviewer">
+            <strong>Ramesh Shrestha</strong>
+            <span>Local Resident</span>
+          </div>
+        </div>
+        <div class="review-card">
+          <div class="stars">★★★★★</div>
+          <p>"Pure, thick milk delivered consistently every morning. Knowing it's supported by a professional team gives great peace of mind."</p>
+          <div class="reviewer">
+            <strong>Sita Adhikari</strong>
+            <span>Home Customer</span>
+          </div>
+        </div>
+        <div class="review-card">
+          <div class="stars">★★★★★</div>
+          <p>"The Ghee smells incredible! You can immediately tell it's made from pure grass-fed milk in Okhaldhunga."</p>
+          <div class="reviewer">
+            <strong>Kiran Thapa</strong>
+            <span>Verified Buyer</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact & Location Footer -->
+  <footer id="contact">
+    <div class="container footer-grid">
+      <div class="footer-col">
+        <div class="logo-text" style="font-size:24px; font-weight:800; color:#22c55e;">Gautam <span style="color:#eab308;">Dairy</span></div>
+        <p>Pure, fresh, and nutritious village dairy products straight from Harkapur, Manebhanjyang 7, Okhaldhunga to your doorstep.</p>
+      </div>
+
+      <div class="footer-col">
+        <h4>Co-Founders & Call</h4>
+        <ul class="contact-list">
+          <li>
+            <i class="fa-solid fa-phone"></i>
+            <div>
+              <strong>Bishnu Prasad Gautam</strong><br>
+              <a href="tel:+9779845678789">+977 9845678789</a>
+            </div>
+          </li>
+          <li>
+            <i class="fa-solid fa-phone"></i>
+            <div>
+              <strong>Menuka Dhamala</strong><br>
+              <a href="tel:+977456789876">+977 456789876</a>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Address & Location</h4>
+        <p><i class="fa-solid fa-location-dot"></i> Harkapur, Manebhanjyang 7<br>Okhaldhunga, Nepal</p>
+        <p><i class="fa-solid fa-clock"></i> Open Daily: 5:00 AM – 7:00 PM</p>
+      </div>
+    </div>
+
+    <div class="copyright">
+      <p>&copy; 2026 Gautam Dairy. All rights reserved. Designed for local freshness.</p>
+    </div>
+  </footer>
+
+  <!-- Slide-out Shopping Cart Drawer -->
+  <div class="cart-overlay" id="cartOverlay"></div>
+  <div class="cart-drawer" id="cartDrawer">
+    <div class="cart-header">
+      <h3>Your Shopping Cart</h3>
+      <button class="close-cart" id="closeCartBtn">&times;</button>
+    </div>
+
+    <div class="cart-body" id="cartItems">
+      <!-- Items dynamically added by JS -->
+    </div>
+
+    <div class="cart-footer">
+      <div class="cart-total">
+        <span>Total Amount:</span>
+        <strong id="cartTotalRs">Rs. 0</strong>
+      </div>
+      <button class="btn btn-primary btn-block" id="checkoutBtn"><i class="fa-solid fa-truck"></i> Place Order</button>
+    </div>
+  </div>
+
+  <script>
+    // JAVASCRIPT CODE
+    const products = [
+      {
+        id: 1,
+        name: "Pure Fresh Milk",
+        category: "milk",
+        price: 110,
+        unit: "per Liter",
+        desc: "100% pure organic cow & buffalo milk straight from Okhaldhunga hills.",
+        img: "https://images.unsplash.com/photo-1550583724-b2692b85b150?auto=format&fit=crop&q=80&w=600"
+      },
+      {
+        id: 2,
+        name: "Village Fresh Curd (Dahi)",
+        category: "curd",
+        price: 140,
+        unit: "per Liter",
+        desc: "Thick, traditional handmade village dahi full of natural probiotics.",
+        img: "https://images.unsplash.com/photo-1488477181946-6428a0291777?auto=format&fit=crop&q=80&w=600"
+      },
+      {
+        id: 3,
+        name: "Pure Grass-Fed Ghee",
+        category: "ghee",
+        price: 1400,
+        unit: "per Kg",
+        desc: "Aromatic, golden, slow-cooked pure clarified butter.",
+        img: "https://images.unsplash.com/photo-1631452180519-c014fe946bc7?auto=format&fit=crop&q=80&w=600"
+      },
+      {
+        id: 4,
+        name: "Fresh Soft Paneer",
+        category: "paneer",
+        price: 800,
+        unit: "per Kg",
+        desc: "Hygienically prepared, rich, and high-protein fresh paneer blocks.",
+        img: "https://images.unsplash.com/photo-1567337710282-00832b415979?auto=format&fit=crop&q=80&w=600"
+      },
+      {
+        id: 5,
+        name: "Country Cream Butter",
+        category: "paneer",
+        price: 950,
+        unit: "per Kg",
+        desc: "Unsalted organic churned butter made from fresh village cream.",
+        img: "https://images.unsplash.com/photo-1589985270826-4b7bb135bc9d?auto=format&fit=crop&q=80&w=600"
+      }
+    ];
+
+    let cart = [];
+
+    // DOM Elements
+    const productsGrid = document.getElementById("productsGrid");
+    const cartOverlay = document.getElementById("cartOverlay");
+    const cartDrawer = document.getElementById("cartDrawer");
+    const openCartBtn = document.getElementById("openCartBtn");
+    const closeCartBtn = document.getElementById("closeCartBtn");
+    const cartItemsContainer = document.getElementById("cartItems");
+    const cartCount = document.getElementById("cartCount");
+    const cartTotalRs = document.getElementById("cartTotalRs");
+    const filterBtns = document.querySelectorAll(".filter-btn");
+
+    // Render Products Grid
+    function renderProducts(category = "all") {
+      productsGrid.innerHTML = "";
+      
+      const filtered = category === "all" 
+        ? products 
+        : products.filter(p => p.category === category);
+
+      filtered.forEach(product => {
+        const card = document.createElement("div");
+        card.className = "product-card";
+        card.innerHTML = `
+          <img src="${product.img}" alt="${product.name}">
+          <div class="product-info">
+            <h3 class="product-title">${product.name}</h3>
+            <p class="product-desc">${product.desc}</p>
+            <div class="product-bottom">
+              <div class="product-price">Rs. ${product.price} <span style="font-size:12px; font-weight:normal; color:#64748b;">${product.unit}</span></div>
+              <button class="btn btn-primary" onclick="addToCart(${product.id})">
+                <i class="fa-solid fa-cart-plus"></i> Add
+              </button>
+            </div>
+          </div>
+        `;
+        productsGrid.appendChild(card);
+      });
+    }
+
+    // Filter Button Handlers
+    filterBtns.forEach(btn => {
+      btn.addEventListener("click", () => {
+        filterBtns.forEach(b => b.classList.remove("active"));
+        btn.classList.add("active");
+        renderProducts(btn.dataset.category);
+      });
+    });
+
+    // Cart Functions
+    function addToCart(id) {
+      const product = products.find(p => p.id === id);
+      const existingIndex = cart.findIndex(item => item.id === id);
+
+      if (existingIndex > -1) {
+        cart[existingIndex].qty += 1;
+      } else {
+        cart.push({ ...product, qty: 1 });
+      }
+
+      updateCartUI();
+      toggleCart(true);
+    }
+
+    function updateCartUI() {
+      const totalItems = cart.reduce((sum, item) => sum + item.qty, 0);
+      const totalPrice = cart.reduce((sum, item) => sum + (item.price * item.qty), 0);
+
+      cartCount.textContent = totalItems;
+      cartTotalRs.textContent = `Rs. ${totalPrice}`;
+
+      cartItemsContainer.innerHTML = "";
+      if (cart.length === 0) {
+        cartItemsContainer.innerHTML = "<p style='text-align:center; color:#64748b; margin-top:20px;'>Your cart is empty.</p>";
+        return;
+      }
+
+      cart.forEach(item => {
+        const itemEl = document.createElement("div");
+        itemEl.className = "cart-item";
+        itemEl.innerHTML = `
+          <div>
+            <strong>${item.name}</strong><br>
+            <span style="font-size:13px; color:#64748b;">Rs. ${item.price} x ${item.qty}</span>
+          </div>
+          <div>
+            <strong style="color:var(--primary)">Rs. ${item.price * item.qty}</strong>
+          </div>
+        `;
+        cartItemsContainer.appendChild(itemEl);
+      });
+    }
+
+    function toggleCart(open) {
+      if (open) {
+        cartOverlay.style.display = "block";
+        cartDrawer.classList.add("open");
+      } else {
+        cartOverlay.style.display = "none";
+        cartDrawer.classList.remove("open");
+      }
+    }
+
+    // Event Listeners
+    openCartBtn.addEventListener("click", () => toggleCart(true));
+    closeCartBtn.addEventListener("click", () => toggleCart(false));
+    cartOverlay.addEventListener("click", () => toggleCart(false));
+
+    document.getElementById("checkoutBtn").addEventListener("click", () => {
+      if (cart.length === 0) {
+        alert("Your cart is empty!");
+        return;
+      }
+      alert("Thank you for your order! Please call +977 9845678789 to confirm delivery details.");
+      cart = [];
+      updateCartUI();
+      toggleCart(false);
+    });
+
+    // Initial Load
+    renderProducts();
+  </script>
+</body>
+</html>
